@@ -5,7 +5,7 @@
       "root": ".",
       "framework": "nextjs"
     },
-    "opencode-plugin-v2": {
+    "opencode-plugin-v-two": {
       "root": "@omniroute/opencode-plugin-v2",
       "runtime": "node"
     }
