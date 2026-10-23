@@ -8,7 +8,7 @@
     "opencode-plugin-v-two": {
       "root": "@omniroute/opencode-plugin-v2",
       "runtime": "node",
-      "entrypoint": "index.js" 
+      "entrypoint": "src/index.ts" 
     }
   },
   "rewrites": [
