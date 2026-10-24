@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: omniroute-api
+    runtime: docker
+    plan: free
+    region: ohio
+    branch: release/v3.8.53
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/monitoring/health
+    envVars:
+      - key: HOSTNAME
+        value: 0.0.0.0
+      - key: DATA_DIR
+        value: /tmp/omniroute
+      - key: REQUIRE_API_KEY
+        value: "true"
