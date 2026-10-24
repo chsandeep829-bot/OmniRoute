@@ -55,7 +55,7 @@ x-common: &common
     - OMNIROUTE_CODEX_APPSERVER_WS=${OMNIROUTE_CODEX_APPSERVER_WS:-ws://codex-app-server:1456}
     - OMNIROUTE_CODEX_APPSERVER_WS_TOKEN_FILE=${OMNIROUTE_CODEX_APPSERVER_WS_TOKEN_FILE:-/run/codex-appserver/token}
   volumes:
-    - ./data:/app/data
+    - omniroute-data:/app/data
     # Shared capability token + codex auth for the app-server WS. Only meaningful
     # when the codex-app-server profile is active. The token dir carries the WS
     # capability token; the codex home is where the dashboard "Apply auth" writes
@@ -422,6 +422,8 @@ networks:
   chatgpt-web-codex-net: {}
 
 volumes:
+  omniroute-data:
+    name: omniroute-data
   chatgpt-web-codex-cdp-token:
     name: omniroute-chatgpt-web-codex-cdp-token
   chatgpt-web-codex-browser-data:
@@ -438,3 +440,4 @@ volumes:
     name: omniroute-codex-appserver-token
   codex-appserver-home:
     name: omniroute-codex-appserver-home
+
